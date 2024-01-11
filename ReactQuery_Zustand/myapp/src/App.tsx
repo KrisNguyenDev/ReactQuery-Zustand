@@ -1,15 +1,18 @@
-import './App.css'
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useProfile } from './hooks'
+import useRouteElements from './useRouteElements'
 
 function App() {
-  const { data } = useProfile()
-  console.log(data)
+  const routeElement = useRouteElements()
+  // const { data } = useProfile()
+  // console.log(data)
   return (
     <>
-      <p>{data?.data.name}</p>
-      <p>{data?.data.email}</p>
+      {routeElement}
       <ToastContainer />
     </>
   )
