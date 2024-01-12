@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 import RegisterLayout from './layouts/RegisterLayout'
-import Login from './components/Login'
+import Login from './pages/Login'
 
 export default function useRouteElements() {
   const routeElement = useRoutes([
