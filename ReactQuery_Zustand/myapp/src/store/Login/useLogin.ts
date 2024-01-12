@@ -1,15 +1,13 @@
 import { create } from 'zustand'
-type State = {
-  openModal: boolean
-}
 
-type Action = {
+type TUseLoginState = {
+  openModal: boolean
   setOpenModal: () => void
   setCloseModal: () => void
 }
 
-export const useLogin = create<State & Action>((set) => ({
+export const useLogin = create<TUseLoginState>()((set) => ({
   openModal: false,
-  setOpenModal: () => set(() => ({ openModal: true })),
-  setCloseModal: () => set(() => ({ openModal: false })),
+  setOpenModal: () => set((state) => ({ ...state, openModal: true })),
+  setCloseModal: () => set((state) => ({ ...state, openModal: false })),
 }))
