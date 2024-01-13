@@ -1,4 +1,4 @@
-import { useLogin } from '@/store/Login/useLogin'
+import { useLogin } from '@/store'
 import { Button, Checkbox, Form, Input, Modal } from 'antd'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
