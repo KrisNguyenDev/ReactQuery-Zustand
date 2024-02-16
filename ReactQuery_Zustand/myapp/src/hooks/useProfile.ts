@@ -1,9 +1,15 @@
 import { userApi } from '@/apis/user.api'
-import { useQuery } from '@tanstack/react-query'
+import { QueryKeys } from '@/constants/queryKeys'
+import { UserProfile } from '@/types/userProfile.type'
+import { UseQueryOptions, useQuery } from '@tanstack/react-query'
+import { AxiosResponse } from 'axios'
 
-export const useProfile = () => {
+type UseProfileOptions = Omit<UseQueryOptions<AxiosResponse<UserProfile>>, 'queryKey' | 'queryFn'>
+
+export const useProfile = (options?: UseProfileOptions) => {
   return useQuery({
-    queryKey: ['profile'],
-    queryFn: () => userApi.getProfile(),
+    ...options,
+    queryKey: [QueryKeys.USER_DETAILS],
+    queryFn: userApi.getProfile,
   })
 }

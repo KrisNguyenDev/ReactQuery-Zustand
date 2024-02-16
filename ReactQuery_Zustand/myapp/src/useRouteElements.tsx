@@ -1,14 +1,15 @@
 import { useRoutes } from 'react-router-dom'
 import RegisterLayout from './layouts/RegisterLayout'
 import Login from './pages/Login'
-import SiderBarLayout from './layouts/SiderBarLayout'
 import Test from './pages/Test'
+import SiderBar from './components/SiderBar'
+import TnxDetails from './pages/TnxDetails'
 
 export default function useRouteElements() {
   const routeElement = useRoutes([
     {
       path: '/',
-      element: <SiderBarLayout />,
+      element: <SiderBar />,
     },
     {
       path: '/register',
@@ -21,6 +22,10 @@ export default function useRouteElements() {
     {
       path: '/test',
       element: <Test />,
+    },
+    {
+      path: '/tnxDetails',
+      element: <TnxDetails />,
     },
   ])
   return routeElement
