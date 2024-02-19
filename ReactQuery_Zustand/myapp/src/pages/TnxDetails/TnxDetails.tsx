@@ -3,10 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 
 export default function TnxDetails() {
   const [SearchParams] = useSearchParams()
-  const tnxId = SearchParams.get('tnxId') || ''
+  const tnxId = SearchParams.get('tnxId') || 'aqbbx1vj1lqrtv3zz'
   const { data: tnxDetails, isLoading, isError } = useTnxDetails(tnxId)
-  // eslint-disable-next-line no-debugger
-  debugger
   if (isLoading) {
     return <div>Is loading...</div>
   }
@@ -21,6 +19,7 @@ export default function TnxDetails() {
       <div>Receiver: {tnxDetails?.data.receiver}</div>
       <div>Date: {tnxDetails?.data.date}</div>
       <div>Description: {tnxDetails?.data.description}</div>
+      <div>Status: {tnxDetails?.data.status}</div>
     </div>
   )
 }

@@ -14,7 +14,7 @@ export const useTnxDetails = (tnxId: string, options?: UseTnxDetailsOptions) => 
     enabled: Boolean(tnxId),
     refetchInterval: (query) => {
       console.log(query)
-      const currentStatus = query.state.data?.status || 'pending'
+      const currentStatus = String(query.state.data?.data?.status) || 'pending'
       console.log(currentStatus)
       if (['completed', 'cancelled', 'failed'].includes(currentStatus)) {
         return false

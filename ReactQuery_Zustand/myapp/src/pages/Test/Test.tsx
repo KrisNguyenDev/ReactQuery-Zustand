@@ -1,7 +1,7 @@
 import { useProfile } from '@/hooks'
 
 const Test = () => {
-  const { data } = useProfile()
+  const { data } = useProfile({ enabled: true })
   return (
     <div className="max-w-7xl mx-auto px-4 grid gap-4">
       <div className="block">
